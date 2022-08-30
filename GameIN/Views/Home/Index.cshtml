@@ -1,0 +1,141 @@
+﻿@model GameIN.Models.HomeModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Home.css" rel="stylesheet" />
+</head>
+
+<div class="container bg-black">
+    <div class="popular">
+        <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" class="active" data-bs-target="#mycarousel" data-bs-slide-to="0" aria-current="true" aria-label="First Slide"></button>
+                <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="1" aria-label="Second Slide"></button>
+                <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="2" aria-label="Third Slide"></button>
+                <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="3" aria-label="Fourth Slide"></button>
+
+            </div>
+            <div class="carousel-inner main">
+                <div class="carousel-item active">
+                    <a href="@Url.Action("GamePage", "Home", new {id = Model.Poupular[3]})">
+                        <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Poupular[3] })" alt="" class="fit-image w-100">
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="@Url.Action("GamePage", "Home", new {id = Model.Poupular[7]})">
+                        <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Poupular[7] })" alt="" class="fit-image w-100">
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="@Url.Action("GamePage", "Home", new {id = Model.Poupular[8]})">
+                        <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Poupular[8] })" alt="" class="fit-image w-100">
+                    </a>
+                </div>
+
+                <div class="carousel-item ">
+                    <a href="@Url.Action("GamePage", "Home", new {id = Model.Poupular[12]})">
+                        <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Poupular[12] })" alt="" class="fit-image w-100">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mycarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mycarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <div class="recent">
+        <h2 class="mb-5 title">Recently Released</h2>
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[0]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Recents[0] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[1]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Recents[1] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[2]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Recents[2] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[3]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Recents[3] })" alt="" class="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="recent">
+        <h2 class=" mb-5 title">Coming Soon</h2>
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Future[0]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Future[0] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Future[1]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Future[1] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[2]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Future[2] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[3]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Future[3] })" alt="" class="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="recent mb-5">
+        <h2 class="title mb-5">Free to Play</h2>
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Free[1]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Free[1] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Free[2]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Free[2] })" alt="" class="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[3]})">
+                    <img class="fit-img" src="@Url.Action("GamePlay", "Home",  new { id = Model.Free[3] })" alt="">
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="@Url.Action("GamePage", "Home", new {id = Model.Recents[4]})">
+                    <img src="@Url.Action("GamePlay", "Home",  new { id = Model.Free[4] })" alt="" class="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+
+
+
+

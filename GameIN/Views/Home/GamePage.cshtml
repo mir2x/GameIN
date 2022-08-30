@@ -1,0 +1,93 @@
+﻿@model GameIN.Models.GameModel
+
+@{
+    ViewBag.Title = "GamePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/GamePage.css" rel="stylesheet" />
+    @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>*@
+    
+</head>
+
+
+<div class="container bg-dark">
+    <div>
+        <img class="gameplay" src="@Url.Action("GamePlay", "Home",  new { id = Model.Name })" />
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-3">
+            <img src="@Url.Action("Poster", "Home", new { id = Model.Name })" />
+        </div>
+        <div class="col-9">
+            <h1 class="text-white">@Html.DisplayFor(model => model.Name)</h1>
+            <nav>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="about-tab"
+                                data-bs-toggle="tab" data-bs-target="#tab-about"
+                                role="tab" aria-controls="tab-about" aria-selected="true">
+                            About
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="description-tab"
+                                data-bs-toggle="tab" data-bs-target="#tab-description"
+                                role="tab" aria-controls="tab-description" aria-selected="false">
+                            Description
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="requirement-tab"
+                                data-bs-toggle="tab" data-bs-target="#tab-requirement"
+                                role="tab" aria-controls="tab-requirement" aria-selected="false">
+                            Requirement
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tab-content">
+                <div class="tab-pane fade show active p-3" id="tab-about"
+                     role="tabpanel" aria-labelledby="about-tab">
+                    <p class="text-white">Category : @Html.DisplayFor(model => model.Category)</p>
+                    <p class="text-white">Reviews : @Html.DisplayFor(model => model.Review) </p>
+                    <p class="text-white">Developed By : @Html.DisplayFor(model => model.Developer)</p>
+                    <p class="text-white">Publisher : @Html.DisplayFor(model => model.Publisher) </p>
+                    <p class="text-white">Released Date : @Html.DisplayFor(model => model.Release)</p>
+                    <p class="text-white">Price : $@Html.DisplayFor(model => model.Price)</p>
+                </div>
+                <div class="tab-pane fade show p-3" id="tab-description"
+                     role="tabpanel" aria-labelledby="description-tab">
+                    <div class="container">
+                        <p class="text-white">@Html.DisplayFor(model => model.Description)</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade show p-3" id="tab-requirement"
+                     role="tabpanel" aria-labelledby="requirement-tab">
+                    <p class="text-white">Platforms : @Html.DisplayFor(model => model.Platform) </p>
+                    <p class="text-white">Processors : @Html.DisplayFor(model => model.Processor) </p>
+                    <p class="text-white">Memory : @Html.DisplayFor(model => model.Ram)</p>
+                    <p class="text-white">Graphics : @Html.DisplayFor(model => model.Graphics) </p>
+                    <p class="text-white">DirectX : @Html.DisplayFor(model => model.Directx) </p>
+                    <p class="text-white">Storage : @Html.DisplayFor(model => model.Storage)</p>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+   
+    <div class="game-info">
+       
+
+        
+    </div>
+
+
+
+
+

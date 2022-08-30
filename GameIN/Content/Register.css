@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('images/register.png');
+    background-size: cover;
+    text-align: center;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+h1 {
+    font-size: 70px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+form {
+    display: inline-block;
+}
+
+label {
+    color: burlywood;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

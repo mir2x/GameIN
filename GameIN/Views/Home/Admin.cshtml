@@ -1,0 +1,62 @@
+﻿@model GameIN.ViewModels.AdminViewModel
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+</head>
+<div class="row">
+    <div class="col-6 bg-dark">
+        <a href="/" class="d-flex align-items-center ms-2 mb-3 text-white text-decoration-none">
+            <span class="fs-4">Admin</span>
+        </a>
+        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="false">Manage Users</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="games-tab" data-bs-toggle="tab" data-bs-target="#games" type="button" role="tab" aria-controls="games" aria-selected="false">Manage Games</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="statistics-tab" data-bs-toggle="tab" data-bs-target="#statistics" type="button" role="tab" aria-controls="statistics" aria-selected="false">Statistics</button>
+            </li>
+        </ul>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center mb-3 ms-2 text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <strong>Log out</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="~/Home/LogOut"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content col-6">
+        <div class="tab-pane active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            @foreach (var admin in Model.Admin)
+            {
+                <p>Name : @admin.Name</p>
+                <p>Email : @admin.Email</p>
+                <button role="button">Change</button>
+            }
+        </div>
+        <div class="tab-pane" id="users" role="tabpanel" aria-labelledby="users-tab">
+            @Html.Action("ManageUser", "Home")
+        </div>
+        <div class="tab-pane" id="games" role="tabpanel" aria-labelledby="games-tab">Games</div>
+        <div class="tab-pane" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">Statistics</div>
+    </div>
+
+</div>
+
+@*<div>
+        <h4>UserModel</h4>
+        <hr />
+
+    </div>*@
+

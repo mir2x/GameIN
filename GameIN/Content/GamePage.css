@@ -1,0 +1,47 @@
+﻿body {
+    color :white;
+}
+
+.parent {
+    position: relative;
+    top: 20px;
+    left: 0;
+    width: 1150px;
+    height: 440px;
+}
+
+.gameplay {
+
+    width: 1270px;
+    height: 440px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 720px;
+    left: 320px;
+}
+
+.poster {
+    position: absolute;
+    top: 340px;
+    left: 250px;
+}
+
+.game-title {
+    position: absolute;
+    top: 500px;
+    left: 550px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.game-info {
+    position: absolute;
+    top: 630px;
+    left: 560px;
+}
+

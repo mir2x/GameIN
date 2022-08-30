@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GameIN.Models.GameModel>
+
+@{
+    ViewBag.Title = "Latest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Popular.css" rel="stylesheet" />
+</head>
+<div class="container bg-black">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-3 mt-4">
+                <a href="@Url.Action("GamePage", "Home", new {id = item.Name})">
+                    <img src="@Url.Action("Poster", "Home",  new { id = item.Name })" alt="" class="fit-image">
+                </a>
+            </div>
+
+            <div class="col-9 mt-3">
+                <div class="row">
+                    <h1 class="text-white">
+                        @Html.ActionLink(item.Name, "GamePage", "Home", new { id = item.Name }, null)
+                    </h1>
+                </div>
+                <div class="row">
+                    <p class="text-white desc">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

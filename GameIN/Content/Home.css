@@ -1,0 +1,33 @@
+﻿.main {
+    height : 600px;
+}
+
+.fit-image {
+    object-fit: fill;
+    height: 600px; 
+}
+
+.fit-img {
+    object-fit: fill;
+    height: 352px;
+}
+
+.title {
+    font-size: 50px;
+    color: darkkhaki;
+}
+
+.popular {
+    margin-bottom : 10px !important;
+}
+
+u{
+    margin-top: 10px;
+}
+
+.recent {
+    margin-top: 20px;
+}
+h2 {
+   
+}

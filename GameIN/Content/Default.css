@@ -1,0 +1,19 @@
+﻿body {
+    font-family: 'IBM Plex Mono Medium';
+    font-size: 22px;
+    background-image: url(https://igg-games.com/wp-content/uploads/2018/11/iggbackground.jpg);
+    background-size:cover;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.normal {
+    margin-top : 7px;
+}
+
+.footerContent {
+    width: 100%;
+    margin: 0 auto;
+}

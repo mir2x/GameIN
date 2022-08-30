@@ -1,0 +1,82 @@
+﻿@model GameIN.Models.UserModel
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+</head>
+<div class="row">
+    <div class="col bg-dark main">
+        <a href="/" class="d-flex align-items-center ms-2 mb-3 text-white text-decoration-none">
+            <span class="fs-4">User</span>
+        </a>
+        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="false">Favorites</button>
+            </li>
+        </ul>
+
+        <a href="#" class="d-flex align-items-center mb-3 ms-2 text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <strong>Log out</strong>
+        </a>
+
+    </div>
+    <div class="tab-content flex-column col">
+        <div class="tab-pane active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RetypePassword)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RetypePassword)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="tab-pane" id="users" role="tabpanel" aria-labelledby="users-tab">Users</div>
+        <div class="tab-pane" id="games" role="tabpanel" aria-labelledby="games-tab">Games</div>
+        <div class="tab-pane" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">Statistics</div>
+
+    </div>
+
+</div>
+
+@*<div>
+        <h4>UserModel</h4>
+        <hr />
+
+    </div>*@
+
+
+

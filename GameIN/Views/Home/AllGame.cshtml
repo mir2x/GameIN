@@ -1,0 +1,55 @@
+﻿@model IEnumerable<GameIN.Models.GameModel>
+
+@{
+    ViewBag.Title = "AllGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Popular.css" rel="stylesheet" />
+</head>
+
+<div class="container bg-dark">
+    <h2>AllGame</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Name, "GamePage", "Home", new { id = item.Name }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+
+
+
+                    @if(Session["Admin"] == "true")
+                    {
+                        @Html.ActionLink("Details", "GamePage", new { id = item.Id })<p>|</p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })<p>|</p>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    }
+                    else 
+                    {
+                        @Html.ActionLink("Details", "GamePage", new { id = item.Id })
+                    }
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GameIN.Models.GameModel>
+
+@{
+    ViewBag.Title = "Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/Search.css" rel="stylesheet" />
+</head>
+<div class="continer bg-dark">
+    <h2 class="text-white">Search Results</h2>
+    <table class="table">
+        <tr>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-white">
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-white">
+                    @Html.ActionLink(item.Name, "GamePage", "Home", new { id = item.Name }, null)                   
+                </td>
+                <td class="text-white">
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

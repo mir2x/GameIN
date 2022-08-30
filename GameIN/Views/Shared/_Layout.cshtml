@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Default.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("GameIn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand title" })
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#default-navbar" aria-controls="default-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="default-navbar">
+                    <ul class="navbar-nav me-auto mb-lg-0">
+                        <li class="nav-item">
+                            @Html.ActionLink("Popular", "Popular", "Home", new { @class = "nav-link normal" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Latest", "Latest", "Home", new { @class = "nav-link normal" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Free", "Free", "Home", new { @class = "nav-link normal" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("All", "AllGame", "Home", new { @class = "nav-link normal" })
+                        </li>
+
+                        @if (Session["Admin"] == "true")
+                        {
+                            <li class="nav-item">
+                                @Html.ActionLink("Add Game", "AddGame", "Home", new { @class = "nav-link normal" })
+                            </li>
+                        }
+
+                    </ul>
+                    @if (!(Session["Admin"] == "true" || Session["User"] == "true"))
+                    {
+                        <ul class="navbar-nav me-3">
+                            <li class="nav-item">
+                                @Html.ActionLink("Register", "Register", "Home", new { @class = "nav-link normal" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link normal" })
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        if (Session["Admin"] == "true")
+                        {
+                            <ul class="navbar-nav me-3">
+                                <li class="nav-item">
+                                    @Html.ActionLink(Convert.ToString(Session["ActiveUser"]), "Admin", "Home", new { @class = "nav-link normal" })
+                                </li>
+                            </ul>
+                        }
+                        if (Session["User"] == "true")
+                        {
+                            <ul class="navbar-nav me-3">
+                                <li class="nav-item">
+                                    @Html.ActionLink(Convert.ToString(Session["ActiveUser"]), "User", "Home", new { @class = "nav-link" })
+                                </li>
+                            </ul>
+                        }
+
+
+                    }
+
+                    <form method="get" action="@Url.Action("Search", "Home")" class="d-flex me-3 normal" role="search">
+                        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    
+    <div class="container">
+        @RenderBody()
+        <hr />
+            <footer class="footerContent">
+                <p class="footerContent">&copy; @DateTime.Now.Year - GameIN</p>
+            </footer>
+    </div>
+
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
